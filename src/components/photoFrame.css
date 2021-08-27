@@ -1,0 +1,185 @@
+/* Camera frame styles */
+
+.camera-frame-container {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    opacity: 0;
+    overflow: hidden;
+  }
+  
+  .camera-frame-container .nasa-photo {
+    width: 100%;
+    height: 100vh;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    opacity: 0;
+    transform: scale(0);
+    background-size: cover;
+    background-position: center center;
+  }
+  
+  .camera-frame-container .nasa-photo img {
+    display: none;
+  }
+  
+  .camera-frame-img {
+    height: 100vh;
+    width: 100%;
+    background: url(../assets/camera-frame.png) center no-repeat;
+    background-size: 100% 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+  }
+  
+  .camera-frame {
+    z-index: 200;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    display: flex;
+    font-family: "Do Hyeon", sans-serif;
+    width: 100%;
+    min-height: 100vh;
+    justify-content: space-between;
+  }
+  
+  /* Bottom Frame */
+  
+  .frame-bottom {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+    padding: 40px 0;
+    align-items: flex-end;
+  }
+  
+  .photo-title h3 {
+    font-size: 25pt;
+  }
+  
+  .photo-title h1 {
+    font-size: 35pt;
+    text-transform: uppercase;
+  }
+  
+  .photo-full-info {
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 30px;
+    transform: translateX(-100vh);
+    opacity: 0;
+    color: white;
+    display: none;
+  }
+  
+  .photo-full-info h2 {
+    font-size: 25pt;
+  }
+  
+  .photo-full-info h3 {
+    font-size: 20pt;
+  }
+  
+  .photo-full-info p {
+    margin-top: 15px;
+    font-size: 16pt;
+    line-height: 25px;
+  }
+  
+  .frame-bottom .author p,
+  .frame-bottom .date p {
+    font-size: 16pt;
+  }
+  
+  .frame-bottom .author,
+  .frame-bottom .date {
+    display: block;
+    width: 10%;
+  }
+  
+  button.change-img {
+    font-family: "Do Hyeon", sans-serif;
+    color: black;
+    background: white;
+    font-size: 16pt;
+  }
+  
+  /* Camera controls style */
+  
+  .controls img {
+    width: 100px;
+    margin-top: -30px;
+    opacity: 0.5;
+  }
+  
+  .camera-frame .controls {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    font-family: "Do Hyeon", sans-serif;
+    color: white;
+    padding: 40px 0;
+    justify-content: space-between;
+  }
+  
+  .camera-frame .info-menu-container {
+    position: relative;
+  }
+  
+  /* Responsive code */
+  
+  @media only screen and (min-width: 800px) and (max-width: 1000px) {
+    .photo-title h1 {
+      font-size: 25pt;
+    }
+  
+    .photo-title h3 {
+      font-size: 20pt;
+    }
+  
+    .camera-frame .info-menu-container button {
+      font-size: 20pt;
+      width: 200px;
+    }
+  }
+  
+  @media only screen and (max-width: 800px) {
+    .frame-bottom,
+    .camera-frame .controls,
+    .camera-frame-img {
+      display: none !important;
+    }
+  
+    .photo-full-info {
+      opacity: 1 !important;
+      display: block !important;
+      transform: none !important;
+    }
+  
+    .camera-frame-container img {
+      position: static !important;
+      margin-bottom: 40px;
+    }
+  
+    .camera-frame,
+    .camera-frame-container .nasa-photo {
+      position: static !important;
+      height: auto;
+      background: none !important;
+    }
+  
+    .camera-frame-container .nasa-photo img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
